@@ -1,0 +1,15 @@
+{
+	"type": "record",
+	"namespace": "com.course.avro.data",
+	"name": "EmployeeForward",
+	"fields": [
+		{
+			"name": "firstName",
+			"type": "string"
+		},
+		{
+			"name": "lastName",
+			"type": "string"
+		}
+	]
+}

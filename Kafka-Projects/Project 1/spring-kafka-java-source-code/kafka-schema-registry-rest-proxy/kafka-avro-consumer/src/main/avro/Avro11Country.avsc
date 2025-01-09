@@ -1,0 +1,17 @@
+{
+	"type": "record",
+	"namespace": "com.course.avro.data",
+	"name": "Avro11Country",
+	"fields": [
+		{
+			"name": "code",
+			"type": "string",
+			"doc": "ISO 3166-1 alpha-2 country code"
+		},
+		{
+			"name": "name",
+			"type": "string",
+			"doc": "country name"
+		}
+	]
+}

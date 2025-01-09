@@ -1,0 +1,27 @@
+{
+	"type": "record",
+	"namespace": "com.course.avro.data",
+	"name": "Avro11BankAccount",
+	"fields": [
+		{
+			"name": "bankName",
+			"type": "string"
+		},
+		{
+			"name": "accountHolderName",
+			"type": "string"
+		},
+		{
+			"name": "accountNumber",
+			"type": "string"
+		},
+		{
+			"name": "bankClearingCode",
+			"type": "string"
+		},
+		{
+			"name": "currencyCode",
+			"type": "string"
+		}
+	]
+}

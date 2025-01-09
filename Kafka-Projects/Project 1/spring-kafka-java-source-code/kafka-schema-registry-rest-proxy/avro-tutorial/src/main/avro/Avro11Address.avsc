@@ -1,0 +1,30 @@
+{
+	"type": "record",
+	"namespace": "com.course.avro.data",
+	"name": "Avro11Address",
+	"fields": [
+		{
+			"name": "addressLine1",
+			"type": "string"
+		},
+		{
+			"name": "addressLine2",
+			"type": [
+				"null",
+				"string"
+			]
+		},
+		{
+			"name": "city",
+			"type": "string"
+		},
+		{
+			"name": "zipCode",
+			"type": "string"
+		},
+		{
+			"name": "country",
+			"type": "com.course.avro.data.Avro11Country"
+		}
+	]
+}

@@ -1,0 +1,37 @@
+plugins {
+	id 'java'
+	id 'com.github.johnrengelman.shadow' version "7.1.2"
+}
+
+group = 'com.course.kafka'
+version = '4.0.0'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+	maven {
+		url "https://packages.confluent.io/maven"
+	}
+}
+
+ext {
+	set('ksqldbUdfVersion', "7.1.0")
+	set('kafkaVersion', "3.1.0")
+}
+
+dependencies {
+	implementation "io.confluent.ksql:ksqldb-udf:${ksqldbUdfVersion}"
+	implementation "org.apache.kafka:kafka_2.13:${kafkaVersion}"
+	implementation "org.apache.kafka:connect-api:${kafkaVersion}"
+}
+
+compileJava {
+    options.compilerArgs << "-parameters"
+}
+
+shadowJar {
+   archiveBaseName.set('ksqldb-udf')
+   archiveClassifier.set('')
+   archiveVersion.set('4.0.0')
+   destinationDirectory.set(file('build/udf-jar'))
+}

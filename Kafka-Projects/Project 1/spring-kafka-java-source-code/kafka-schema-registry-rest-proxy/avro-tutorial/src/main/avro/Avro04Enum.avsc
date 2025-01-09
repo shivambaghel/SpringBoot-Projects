@@ -1,0 +1,11 @@
+{
+	"type": "enum",
+	"namespace": "com.course.avro.data",
+	"name": "Avro04Enum",
+	"doc": "Sample enum",
+	"symbols": [
+		"BLACK",
+		"BLUE",
+		"BROWN"
+	]
+}

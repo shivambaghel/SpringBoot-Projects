@@ -1,0 +1,12 @@
+{
+	"type": "record",
+	"namespace": "com.course.avro.data",
+	"name": "Avro04",
+	"doc": "Sample enum",
+	"fields": [
+		{
+			"name": "allowedColor",
+			"type": "com.course.avro.data.Avro04Enum"
+		}
+	]
+}

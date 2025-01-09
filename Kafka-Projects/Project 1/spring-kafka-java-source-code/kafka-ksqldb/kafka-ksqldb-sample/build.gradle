@@ -1,0 +1,42 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.7'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.course.kafka'
+version = '4.0.0'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+	maven {
+		url "https://ksqldb-maven.s3.amazonaws.com/maven/"
+	}
+	maven {
+		url "https://packages.confluent.io/maven"
+	}
+}
+
+ext {
+	set('ksqldbVersion', "0.24.0")
+	set('ksqldbUdfVersion', "7.1.0")
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.kafka:spring-kafka'
+	implementation 'org.apache.kafka:kafka-streams'
+	
+	implementation "io.confluent.ksql:ksqldb-api-client:${ksqldbVersion}"
+	implementation "io.confluent.ksql:ksqldb-udf:${ksqldbUdfVersion}"
+	
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.kafka:spring-kafka-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
