@@ -1,0 +1,21 @@
+mutation addHelloMutation($newHello: HelloInput!) {
+  addHello(helloInput: $newHello)
+}
+
+mutation replaceHelloTextMutation($helloReplacement: HelloInput!) {
+  replaceHelloText(helloInput: $helloReplacement) {
+    text
+    randomNumber
+  }
+}
+
+mutation deleteHelloMutation($number: Int!) {
+  deleteHello(number: $number)
+}
+
+query allHellos {
+  allHellos {
+    text
+    randomNumber
+  }
+}

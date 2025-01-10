@@ -1,0 +1,336 @@
+{
+  "nodes": [
+    {
+      "id": "n0",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "caption": "Manufacturer",
+      "labels": [],
+      "properties": {
+        "name": "String!",
+        "originCountry": "String!",
+        "description": "String"
+      },
+      "style": {
+        "node-color": "#fb9e00"
+      }
+    },
+    {
+      "id": "n1",
+      "position": {
+        "x": 316.49470802919706,
+        "y": 0
+      },
+      "caption": "Series",
+      "labels": [],
+      "properties": {
+        "name": "String!",
+        "characteristics": "[String!]"
+      },
+      "style": {
+        "node-color": "#fb9e00"
+      }
+    },
+    {
+      "id": "n2",
+      "position": {
+        "x": 230.2178223402805,
+        "y": 367.48910385817584
+      },
+      "caption": "Model",
+      "labels": [],
+      "properties": {
+        "name": "String",
+        "onTheRoadPrice": "PositiveFloat!",
+        "lengthMm": "NonNegativeInt!",
+        "widthMm": "NonNegativeInt!",
+        "heightMm": "NonNegativeInt!",
+        "exteriorColor": "String!",
+        "interiorColor": "String!",
+        "releaseYear": "Int!",
+        "transmission": "AUTOMATIC / MANUAL",
+        "bodyType": "SUV / SEDAN / MPV / ...",
+        "fuel": "DIESEL / GAS / ELECTRIC / HYBRID",
+        "doors": "NonNegativeInt!",
+        "airbags": "NonNegativeInt!",
+        "isAvailable": "Boolean!"
+      },
+      "style": {
+        "node-color": "#fb9e00"
+      }
+    },
+    {
+      "id": "n3",
+      "position": {
+        "x": 1134.9769371503232,
+        "y": 300
+      },
+      "caption": "Sales Order",
+      "labels": [],
+      "properties": {
+        "orderDateTime": "DateTime!",
+        "orderNumber": "String!"
+      },
+      "style": {}
+    },
+    {
+      "id": "n4",
+      "position": {
+        "x": -207.41226278802972,
+        "y": 667.4605479538226
+      },
+      "caption": "Feature",
+      "labels": [],
+      "properties": {
+        "name": "String!",
+        "activeByDefault": "Boolean!",
+        "activeByRequest": "Boolean!",
+        "installationPrice": "NonNegativeFloat!",
+        "isSafety": "Boolean!",
+        "isEntertainment": "Boolean!",
+        "isPerformance": "Boolean!",
+        "isConvenience": "Boolean!",
+        "isDisplay": "Boolean!"
+      },
+      "style": {
+        "node-color": "#fb9e00"
+      }
+    },
+    {
+      "id": "n5",
+      "position": {
+        "x": -298.9409467615916,
+        "y": 328.83737990139247
+      },
+      "caption": "Engine",
+      "labels": [],
+      "properties": {
+        "description": "String",
+        "horsePower": "NonNegativeInt!",
+        "torque": "NonNegativeInt!",
+        "capacityCc": "NonNegativeInt!"
+      },
+      "style": {
+        "node-color": "#fb9e00"
+      }
+    },
+    {
+      "id": "n6",
+      "position": {
+        "x": 902.5717365610376,
+        "y": 0
+      },
+      "caption": "Sales Order Item",
+      "labels": [],
+      "properties": {
+        "quantity": "PositiveInt!",
+        "notes": "String"
+      },
+      "style": {}
+    },
+    {
+      "id": "n7",
+      "position": {
+        "x": 1413.5747176333584,
+        "y": 460.8485035575126
+      },
+      "caption": "Finance",
+      "labels": [],
+      "properties": {
+        "baseAmount": "PositiveFloat!",
+        "taxAmount": "NonNegativeFloat!",
+        "discountAmount": "NonPositiveFloat!",
+        "isLoan": "Boolean!"
+      },
+      "style": {}
+    },
+    {
+      "id": "n8",
+      "position": {
+        "x": 1743.5499304989805,
+        "y": 441.6424022797201
+      },
+      "caption": "Loan",
+      "labels": [],
+      "properties": {
+        "financeCompany": "String!",
+        "contactPersonName": "String!",
+        "contactPersonPhone": "String!",
+        "contactPersonEmail": "String!"
+      },
+      "style": {}
+    },
+    {
+      "id": "n9",
+      "position": {
+        "x": 1083.7019802031923,
+        "y": 598.2731695496136
+      },
+      "caption": "Customer",
+      "labels": [],
+      "properties": {
+        "fullName": "String!",
+        "birthDate": "Date!",
+        "phone": "String!",
+        "email": "String!"
+      },
+      "style": {
+        "node-color": "#fda1ff"
+      }
+    },
+    {
+      "id": "n10",
+      "position": {
+        "x": 1264.6761853032951,
+        "y": 844.398088485753
+      },
+      "caption": "Address",
+      "labels": [],
+      "properties": {
+        "street": "String!",
+        "city": "String!",
+        "zipcode": "String!"
+      },
+      "style": {
+        "node-color": "#fda1ff"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "id": "n0",
+      "fromId": "n0",
+      "toId": "n1",
+      "type": "produces",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n1",
+      "fromId": "n1",
+      "toId": "n2",
+      "type": "releases",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n2",
+      "fromId": "n2",
+      "toId": "n4",
+      "type": "has",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n3",
+      "fromId": "n2",
+      "toId": "n5",
+      "type": "has",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n4",
+      "fromId": "n3",
+      "toId": "n6",
+      "type": "has",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n5",
+      "fromId": "n6",
+      "toId": "n2",
+      "type": "sells",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n6",
+      "fromId": "n3",
+      "toId": "n7",
+      "type": "paid using",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n7",
+      "fromId": "n7",
+      "toId": "n8",
+      "type": "loan by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n8",
+      "fromId": "n9",
+      "toId": "n3",
+      "type": "issues",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n9",
+      "fromId": "n9",
+      "toId": "n10",
+      "type": "live in",
+      "properties": {},
+      "style": {}
+    }
+  ],
+  "style": {
+    "font-family": "Nunito Sans",
+    "background-color": "#F2F2F2",
+    "background-image": "",
+    "background-size": "100%",
+    "node-color": "#4C8EDA",
+    "border-width": 0,
+    "border-color": "#000000",
+    "radius": 75,
+    "node-padding": 5,
+    "node-margin": 2,
+    "outside-position": "auto",
+    "node-icon-image": "",
+    "node-background-image": "",
+    "icon-position": "inside",
+    "icon-size": 64,
+    "caption-position": "inside",
+    "caption-max-width": 200,
+    "caption-color": "#ffffff",
+    "caption-font-size": 20,
+    "caption-font-weight": "normal",
+    "label-position": "inside",
+    "label-display": "bare",
+    "label-color": "#ffffff",
+    "label-background-color": "#848484",
+    "label-border-color": "#848484",
+    "label-border-width": 3,
+    "label-font-size": 20,
+    "label-padding": 5,
+    "label-margin": 4,
+    "directionality": "directed",
+    "detail-position": "above",
+    "detail-orientation": "parallel",
+    "arrow-width": 3,
+    "arrow-color": "#848484",
+    "margin-start": 5,
+    "margin-end": 5,
+    "margin-peer": 20,
+    "attachment-start": "normal",
+    "attachment-end": "normal",
+    "relationship-icon-image": "",
+    "type-color": "#848484",
+    "type-background-color": "#F2F2F2",
+    "type-border-color": "#848484",
+    "type-border-width": 0,
+    "type-font-size": 21,
+    "type-padding": 5,
+    "property-position": "outside",
+    "property-alignment": "colon",
+    "property-color": "#848484",
+    "property-font-size": 20,
+    "property-font-weight": "normal"
+  }
+}

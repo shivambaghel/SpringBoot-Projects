@@ -1,0 +1,25 @@
+type SalesOrderItem {
+    uuid                : String!
+    quantity            : PositiveInt!
+    notes               : String
+    modelUuid           : String!
+    modelDetail         : SimpleModel
+}
+
+input SalesOrderItemInput {
+    quantity    : PositiveInt!
+    notes       : String        @Size(max: 200)
+    modelUuid   : String!       @Pattern(regexp: "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$")
+}
+
+type SimpleModel {
+    uuid            : String!
+    name            : String!
+    onTheRoadPrice  : PositiveFloat
+    transmission    : String
+    exteriorColor   : String
+    interiorColor   : String
+    releaseYear     : Int
+    bodyType        : String
+    fuel            : String
+}

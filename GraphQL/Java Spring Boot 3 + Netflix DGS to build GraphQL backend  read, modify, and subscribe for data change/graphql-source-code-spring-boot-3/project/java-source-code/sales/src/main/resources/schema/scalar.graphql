@@ -1,0 +1,9 @@
+scalar Date
+scalar DateTime
+scalar NonNegativeInt
+scalar NonNegativeFloat
+scalar PositiveInt
+scalar PositiveFloat
+scalar NonPositiveFloat
+scalar Long
+scalar Upload

@@ -1,0 +1,6 @@
+subscription getStockEveryInterval {
+  randomStock {
+    symbol
+    price
+  }
+}

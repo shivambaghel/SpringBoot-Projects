@@ -1,0 +1,27 @@
+plugins {
+    id 'java-library'
+    id 'com.apollographql.apollo3' version '3.7.4'
+}
+
+repositories {
+    // Use Maven Central for resolving dependencies.
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+
+    runtimeOnly 'com.apollographql.apollo3:apollo-runtime:3.7.4'
+    implementation 'com.apollographql.apollo3:apollo-rx3-support:3.7.4'
+}
+
+tasks.named('test') {
+    // Use JUnit Platform for unit tests.
+    useJUnitPlatform()
+}
+
+apollo {
+    service("graphql") {
+        packageName.set("com.course.graphqlclient")
+    }
+}

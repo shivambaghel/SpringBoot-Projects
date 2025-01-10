@@ -1,0 +1,32 @@
+query books {
+  books(author: "") {
+    title
+    author {
+      name
+      originCountry
+    }
+    released {
+      year
+      printedEdition
+      releasedCountry
+    }
+  }
+}
+
+
+query booksByReleased($releaseYear: Int = 2020, $releasePrintedEdition: Boolean) {
+  booksByReleased(
+    releasedInput: {
+      year: $releaseYear
+      printedEdition: $releasePrintedEdition
+    }
+  ) {
+    title
+    released {
+      year
+    }
+    author {
+      name
+    }
+  }
+}
