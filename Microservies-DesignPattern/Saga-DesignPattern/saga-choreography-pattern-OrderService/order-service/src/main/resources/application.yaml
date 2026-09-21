@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    stream:
+      function:
+        definition : orderSupplier;paymentEventConsumer    // beans defined in config package that are used to publish and consume events
+      bindings:
+        orderSupplier-out-0:
+          destination: order-event       // kafka topic name
+                                         // only publishing events that's why used only supplier
+
+
+
+server:
+  port: 8081
