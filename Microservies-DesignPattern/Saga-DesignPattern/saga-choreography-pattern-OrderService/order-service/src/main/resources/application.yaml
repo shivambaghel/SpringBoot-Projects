@@ -6,7 +6,10 @@ spring:
       bindings:
         orderSupplier-out-0:
           destination: order-event       // kafka topic name
-                                         // only publishing events that's why used only supplier
+                                         // only publishing events to order-event topic
+        paymentEventConsumer-in-0:
+          destination: payment-event     // kafka topic name
+                                         // only consuming events from payment-event topic
 
 
 
