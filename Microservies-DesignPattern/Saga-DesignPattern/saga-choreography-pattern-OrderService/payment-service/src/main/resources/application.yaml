@@ -1,0 +1,16 @@
+## PaymentConsumerConfig-> paymentProcessor() bean will consume orderEvent topic and publish paymentEvent topic
+
+spring:
+  cloud:
+    stream:
+      function:
+        definition : paymentProcessor
+      bindings:
+        paymentProcessor-in-0 :     # consing from order-event topic
+          destination: order-event   # topic name
+        paymentProcessor-out-0:     # publishing to payment-event topic
+          destination: payment-event # topic name
+
+
+server:
+  port: 8082
